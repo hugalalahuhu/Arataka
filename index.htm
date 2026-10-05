@@ -8,19 +8,23 @@
               .serif {
     display: block;
     font-family: "Playfair Display", Georgia, serif;
-    font-size: 64px;
+    font-size: clamp(24px, 4vw, 48px);
     color: #7fd8f5;
     text-shadow: 2px 2px 0 #1b7f9b, 4px 4px 0 #0e5a73;
+    margin: 0px;
   }
 
   .name {
     font-family: Arial, sans-serif;
-    font-size: 72px;
+    font-size: 2.4vw;
     text-shadow:
         2px  2px 0 black,
        -2px  2px 0 black,
         2px -2px 0 black,
        -2px -2px 0 black;
+    margin: 0px;
+    padding: 0px;
+    transform:scale(2)
   }
             body{
                 background-image: url('Bg.png');
@@ -40,7 +44,7 @@
     height: 90vh;
 
     display: grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
+    grid-template-columns: repeat(3, auto);
     grid-template-rows: minmax(0, 1fr) minmax(0,1.4fr) minmax(0,0.2fr) minmax(0,1fr) minmax(0,0.3fr) minmax(0,1.6fr) repeat(3,minmax(0,1fr));
     gap: 2%;
     padding: 0;
@@ -52,7 +56,6 @@
 #container > div {
     min-width: 0;
     min-height: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,32 +113,103 @@
 #changingone:hover {
   transform: scale(1.1);
 }
+@media (max-width: 1080px) {
+    .name,.serif,span,#thrdone{
+        display: none;
+    }
+    #container{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    sprits{
+        flex:2;
+    }
+    #stars{
+        flex:2;
+    }
+    #fthone{
+        flex:1;
+    }
+    #sthone{
+        flex:0.5;
+    }
+    #svthone{
+        flex:2;
+    }
+    #ethone{
+        flex:1;
+    }
+    #nthone{
+        flex:1;
+    }
+    #tnthone{
+        flex:1;
+    }
 
+}
+@media (max-width: 600px) {
+    .name,.serif,span,#thrdone{
+        display: none;
+    }
+    #container{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0px;
+    }
+    sprits{
+        flex:1;
+    }
+    #stars{
+        flex:1;
+    }
+    #fthone{
+        flex:0.5;
+    }
+    #sthone{
+        flex:0.2;
+    }
+    #svthone{
+        flex:1;
+    }
+    #ethone{
+        flex:0.5;
+    }
+    #nthone{
+        flex:1;
+    }
+    #tnthone{
+        flex:1;
+    }
+
+}
         </style>
     </head>
     <body>
 <div id="container">
-    <div style="grid-row: 1; grid-column: 2;"><img src="Spirits&Such.png" style="margin:0px;"></div>
-    <div style="grid-row: 2; grid-column: 2;"><img src="stars2ndline.png" style="margin: 0px;"></div>
-    <div style="grid-row: 3; grid-column: 2;text-align: center;display: flex;"><span>The star something of the 21st century who defeated<span style="color: darkred;"> The something</span></span></div>
-    <div style="grid-row: 4; grid-column: 2;"><img src="4th.png"></div>
-    <div style="grid-column: 2;grid-row: 5;"><img src="5th.png"></div>
-    <div style="grid-column: 2;grid-row: 6;"><img src="6th.png"></div>
-    <div style="grid-column: 2;grid-row: 7;"><img src="7th.png"></div>
-    <div style="position: absolute; left: 0px;margin: 0px;padding: 0px;top: 50%;">
+    <div style="grid-row: 1; grid-column: 2;" id="sprits"><img src="Spirits&Such.png" style="margin:0px;" ></div>
+    <div style="grid-row: 2; grid-column: 2;" id="stars"><img src="stars2ndline.png" style="margin: 0px;"></div>
+    <div style="grid-row: 3; grid-column: 2;text-align: center;display: flex;" id="thrdone"><span>The star something of the 21st century who defeated<span style="color: darkred;"> The something</span></span></div>
+    <div style="grid-row: 4; grid-column: 2;" id="fthone"><img src="4th.png"></div>
+    <div style="grid-column: 2;grid-row: 5;" id="sthone"><img src="5th.png"></div>
+    <div style="grid-column: 2;grid-row: 6;" id="svthone"><img src="6th.png"></div>
+    <div style="grid-column: 2;grid-row: 7;" id="ethone"><img src="7th.png"></div>
+    <div style="position:absolute;top:50%;left:0%;display: flex;flex-direction: column;align-items: center ;justify-content: center;width: 30%;height: 20%;margin-left:2vw;">
         <span class="serif">Welcome to</span>
-        <br>
-
   <div class="name">
     <span style="color:#19d3d0">Rei</span><span style="color:#e6e22a">gen</span>
     <span style="color:#e12ee6">Ara</span><span style="color:#3fd62a">taka's</span>
   </div>
-<br>
   <span class="serif">homepage!</span>
     </div>
-    <div style="grid-column: 2;grid-row: 8;"><img id="changingone" src="8th.png"></div>
+    <div style="grid-column: 2;grid-row: 8;" id="nthone"><img id="changingone" src="8th.png"></div>
 
-    <div style="grid-column: 2;grid-row: 9;"><img src="9th.png"></div>
+    <div style="grid-column: 2;grid-row: 9;" id="tnthone"><img src="9th.png"></div>
 
 
 
