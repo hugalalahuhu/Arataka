@@ -26,6 +26,7 @@
     padding: 0px;
     transform:scale(2)
   }
+ 
             body{
                 background-image: url('Bg.png');
                 background-size: auto;
@@ -151,7 +152,7 @@
 
 }
 @media (max-width: 600px) {
-    .name,.serif,span,#thrdone{
+    .name,.serif,span,#thrdone,#som{
         display: none;
     }
     #container{
@@ -161,9 +162,6 @@
         align-items: center;
         flex-wrap: wrap;
         gap: 0px;
-    }
-    sprits{
-        flex:1;
     }
     #stars{
         flex:1;
@@ -188,12 +186,28 @@
     }
 
 }
+#animcont{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+@keyframes animate{
+    0%{
+        transform: rotateY(0deg);
+
+    }
+    100%{
+        transform: rotateY(360deg);
+        top: 100vw;
+    }
+}
         </style>
     </head>
-    <body>
+    <body id="body">
 <div id="container">
-    <div style="grid-row: 1; grid-column: 2;" id="sprits"><img src="Spirits&Such.png" style="margin:0px;" ></div>
-    <div style="grid-row: 2; grid-column: 2;" id="stars"><img src="stars2ndline.png" style="margin: 0px;"></div>
+    <div style="grid-row: 1; grid-column: 2;" id="sprits"><img src="Spirits&Such.png" style="margin:0px;" id="som" ></div>
+    <div style="grid-row: 2; grid-column: 2;" id="stars"><img id="changingone1" src="stars2ndline.png" style="margin: 0px;"></div>
     <div style="grid-row: 3; grid-column: 2;text-align: center;display: flex;" id="thrdone"><span>The star something of the 21st century who defeated<span style="color: darkred;"> The something</span></span></div>
     <div style="grid-row: 4; grid-column: 2;" id="fthone"><img src="4th.png"></div>
     <div style="grid-column: 2;grid-row: 5;" id="sthone"><img src="5th.png"></div>
@@ -202,12 +216,12 @@
     <div style="position:absolute;top:50%;left:0%;display: flex;flex-direction: column;align-items: center ;justify-content: center;width: 30%;height: 20%;margin-left:2vw;">
         <span class="serif">Welcome to</span>
   <div class="name">
-    <span style="color:#19d3d0">Rei</span><span style="color:#e6e22a">gen</span>
-    <span style="color:#e12ee6">Ara</span><span style="color:#3fd62a">taka's</span>
+    <span style="color:#19d3d0" id="1q">Rei</span><span style="color:#e6e22a" id="2q">gen</span>
+    <span style="color:#e12ee6" id="3q">Ara</span><span style="color:#3fd62a" id="4q">taka's</span>
   </div>
   <span class="serif">homepage!</span>
     </div>
-    <div style="grid-column: 2;grid-row: 8;" id="nthone"><img id="changingone" src="8th.png"></div>
+    <div style="grid-column: 2;grid-row: 8;" id="nthone"><a href="mainindex.htm"><img id="changingone" src="8th.png"></a></div>
 
     <div style="grid-column: 2;grid-row: 9;" id="tnthone"><img src="9th.png"></div>
 
@@ -221,11 +235,192 @@
         }else{
             document.getElementById("changingone").setAttribute("src","8th.png")
         }
+        if(document.getElementById("changingone1").getAttribute("src")=="2aalt.png"){
+            document.getElementById("changingone1").setAttribute("src","2alt.png")
+            console.log("true");
+        }else{
+            document.getElementById("changingone1").setAttribute("src","2aalt.png")
+            console.log("false");
+
+        }
         setTimeout(anim,500)
     }
     anim()
-   
+   $(document).ready(function(){
+    setTimeout(function(){
+    $("#1q").fadeIn(100).delay(100).fadeOut(100).delay(100).fadeIn(100).delay(100).fadeOut(100).delay(100).fadeIn(100).text("Ice");
+    $("#2q")
+    .delay(200)
+    .queue(function(next) {
+        $(this).css("color", "white");
+        next();
+    })
+    .delay(60)
+    .fadeIn(50)
+    .queue(function(next) {
+        $(this).css("transform", "scale(4)");
+        next();
+    })
+    .delay(80)
+    .queue(function(next) {
+        $(this).css("background-color", "black");
+        $("#2q").css("color","black");
+        next();
+    })
+    .delay(100)
+    .queue(function(next) {
+        $(this).css("background-color", "transparent");
+        $(this).css("color", "white");
+        next();
+    })
+    .queue(function(next) {
+        $(this).text("let");
+        next();
+    });
+    $("#3q")
+    .delay(500)
+    .queue(function(next) {
+        $(this).css("color", "white");
+        next();
+    })
+    .delay(60)
+    .fadeIn(50)
+    .delay(80)
+    .queue(function(next) {
+        $(this).css("background-color", "black");
+        $("this").css("color","black");
+        $(this).text("Tam");
+        next();
+    })
+    .delay(100)
+    .queue(function(next) {
+        $(this).css("background-color", "transparent");
+        $(this).css("color", "orange");
+        $(".name").css("background-color", "black");
+
+          $("#3q").text("");
+           $("#4q").text("");
+        next();
+    });
+
+    $("#4q")
+    .delay(100)
+    .queue(function(next) {
+        $(this).css("color", "white");
+
+        next();
+    })
+    .delay(60)
+    .fadeIn(50)
+    .delay(80)
+    .queue(function(next) {
+        $(this).css("color","black");
+        $(this).text("Gau");
+        next();
+    })
+    .delay(100)
+    .fadeOut(100)
+    
+    .queue(function(next) {
+        $(this).css("background-color", "transparent");
+        $(this).css("color", "crimson");
+        next();
+    });
+    $("#3q")
+    .delay(500)
+    .queue(function(next) {
+        $(this).css("color", "white");
+        next();
+    })
+    .delay(60)
+    .fadeIn(50)
+    .delay(80)
+    .queue(function(next) {
+        $(this).css("background-color", "black");
+        $(this).css("color","black");
+        $(this).text("Gau");
+        next();
+    })
+    .delay(100)
+    .queue(function(next) {
+        $(this).css("background-color", "transparent");
+        $(this).css("color", "orange");
+        next();
+    });
+
+    $("#4q")
+    .delay(500)
+    .queue(function(next) {
+        $(this).css("color", "white");
+        next();
+    })
+    .delay(60)
+    .fadeIn(50)
+    .delay(80)
+    .queue(function(next) {
+        $(this).css("background-color", "black");
+        $(this).css("color","black");
+        $(this).text("Tam");
+                $(".name").css("background-color", "transparent");
+
+        next();
+    })
+    .delay(100)
+    .fadeOut(100)
+    .queue(function(next) {
+
+        $(this).css("background-color", "transparent");
+        $(this).css("color", "crimson");
+        next();
+    });
+
+    $("#4q")
+    .delay(500)
+    .queue(function(next) {
+        $(".name").css("color", "black");
+        next();
+    })
+    .delay(60)
+    .fadeIn(50)
+    .delay(80)
+    .queue(function(next) {
+        $(this).css("background-color", "black");
+        $(this).css("color","black");
+        $(this).text("tam's");
+        next();
+    })
+    .delay(100)
+    .fadeOut(100)
+    .fadeIn(100)
+    .queue(function(next) {
+        $(this).css("background-color", "transparent");
+        $(this).css("color", "crimson");
+        next();
+    });
+},3000)
+function doit(){
+    let a=new Image();
+    a.src="star.png";
+    a.style.position="relative";
+    a.style.top="-100vw";
+    document.getElementById("animcont").appendChild(a);
+    a.style.height=parseInt(Math.random()*20)+"vw";
+    a.style.animation="animate "+(Math.random()*3+2)+"s linear forwards";
+    a.style.zIndex="-1";
+    setTimeout(function(){
+        a.remove();
+    },5000)
+}
+$(document).mouseenter(function(){
+    for(let i=0;i<20;i++){
+        doit()
+    }
+})
+
+
+})
 </script>
 </div>
+<div id="animcont"></div>
     </body>
 </html>
