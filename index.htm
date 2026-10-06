@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>RightPlace</title>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="static/icon.gif" />
+
         <style>
               .serif {
     display: block;
@@ -28,7 +31,7 @@
   }
  
             body{
-                background-image: url('Bg.png');
+                background-image: url('static/Bg.png');
                 background-size: auto;
                 background-repeat: repeat;
             }
@@ -179,7 +182,7 @@
         flex:0.5;
     }
     #nthone{
-        flex:1;
+        flex:0.4;
     }
     #tnthone{
         flex:1;
@@ -206,13 +209,13 @@
     </head>
     <body id="body">
 <div id="container">
-    <div style="grid-row: 1; grid-column: 2;" id="sprits"><img src="Spirits&Such.png" style="margin:0px;" id="som" ></div>
-    <div style="grid-row: 2; grid-column: 2;" id="stars"><img id="changingone1" src="stars2ndline.png" style="margin: 0px;"></div>
+    <div style="grid-row: 1; grid-column: 2;" id="sprits"><img src="static/Spirits&Such.png" style="margin:0px;" id="som" ></div>
+    <div style="grid-row: 2; grid-column: 2;" id="stars"><img id="changingone1" src="static/2alt.png" style="margin: 0px;"></div>
     <div style="grid-row: 3; grid-column: 2;text-align: center;display: flex;" id="thrdone"><span>The star something of the 21st century who defeated<span style="color: darkred;"> The something</span></span></div>
-    <div style="grid-row: 4; grid-column: 2;" id="fthone"><img src="4th.png"></div>
-    <div style="grid-column: 2;grid-row: 5;" id="sthone"><img src="5th.png"></div>
-    <div style="grid-column: 2;grid-row: 6;" id="svthone"><img src="6th.png"></div>
-    <div style="grid-column: 2;grid-row: 7;" id="ethone"><img src="7th.png"></div>
+    <div style="grid-row: 4; grid-column: 2;" id="fthone"><img src="static/4th.png"></div>
+    <div style="grid-column: 2;grid-row: 5;" id="sthone"><img src="static/5th.png"></div>
+    <div style="grid-column: 2;grid-row: 6;" id="svthone"><img src="static/6th.png"></div>
+    <div style="grid-column: 2;grid-row: 7;" id="ethone"><img src="static/7th.png"></div>
     <div style="position:absolute;top:50%;left:0%;display: flex;flex-direction: column;align-items: center ;justify-content: center;width: 30%;height: 20%;margin-left:2vw;">
         <span class="serif">Welcome to</span>
   <div class="name">
@@ -221,26 +224,24 @@
   </div>
   <span class="serif">homepage!</span>
     </div>
-    <div style="grid-column: 2;grid-row: 8;" id="nthone"><a href="mainindex.htm"><img id="changingone" src="8th.png"></a></div>
+    <div style="grid-column: 2;grid-row: 8;" id="nthone"><a href="mainindex.htm"><img id="changingone" src="static/8th.png"></a></div>
 
-    <div style="grid-column: 2;grid-row: 9;" id="tnthone"><img src="9th.png"></div>
+    <div style="grid-column: 2;grid-row: 9;" id="tnthone"><img src="static/9th.png"></div>
 
 
 
 
 <script>
     function anim(){
-        if(document.getElementById("changingone").getAttribute("src")=="8th.png"){
-            document.getElementById("changingone").setAttribute("src","8ath.png")
+        if(document.getElementById("changingone").getAttribute("src")=="static/8th.png"){
+            document.getElementById("changingone").setAttribute("src","static/8ath.png")
         }else{
-            document.getElementById("changingone").setAttribute("src","8th.png")
+            document.getElementById("changingone").setAttribute("src","static/8th.png")
         }
-        if(document.getElementById("changingone1").getAttribute("src")=="2aalt.png"){
-            document.getElementById("changingone1").setAttribute("src","2alt.png")
-            console.log("true");
-        }else{
-            document.getElementById("changingone1").setAttribute("src","2aalt.png")
-            console.log("false");
+        if(document.getElementById("changingone1").getAttribute("src")=="static/2aalt.png"){
+            document.getElementById("changingone1").setAttribute("src","static/2alt.png")
+        }else if(document.getElementById("changingone1").getAttribute("src")=="static/2alt.png"){
+            document.getElementById("changingone1").setAttribute("src","static/2aalt.png")
 
         }
         setTimeout(anim,500)
@@ -257,10 +258,6 @@
     })
     .delay(60)
     .fadeIn(50)
-    .queue(function(next) {
-        $(this).css("transform", "scale(4)");
-        next();
-    })
     .delay(80)
     .queue(function(next) {
         $(this).css("background-color", "black");
@@ -400,7 +397,7 @@
 },3000)
 function doit(){
     let a=new Image();
-    a.src="star.png";
+    a.src="static/star.png";
     a.style.position="relative";
     a.style.top="-100vw";
     document.getElementById("animcont").appendChild(a);
